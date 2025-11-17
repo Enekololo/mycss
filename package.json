@@ -1,0 +1,41 @@
+{
+  "name": "mycss",
+  "version": "1.0.0",
+  "description": "it's for school\r 1. download/clone repo\r 2. extract repo\r 3. run index.html\r 4. have fun (no)",
+  "keywords": [
+    "schoolproject"
+  ],
+  "homepage": "https://github.com/Enekololo/mycss#readme",
+  "bugs": {
+    "url": "https://github.com/Enekololo/mycss/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Enekololo/mycss.git"
+  },
+  "license": "ISC",
+  "author": "Eneko",
+  "type": "commonjs",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron-forge start",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "package": "electron-forge package",
+    "make": "electron-forge make"
+  },
+  "devDependencies": {
+    "@electron-forge/cli": "^7.10.2",
+    "@electron-forge/maker-deb": "^7.10.2",
+    "@electron-forge/maker-rpm": "^7.10.2",
+    "@electron-forge/maker-squirrel": "^7.10.2",
+    "@electron-forge/maker-zip": "^7.10.2",
+    "@electron-forge/plugin-auto-unpack-natives": "^7.10.2",
+    "@electron-forge/plugin-fuses": "^7.10.2",
+    "@electron/fuses": "^1.8.0",
+    "electron": "^39.2.1",
+    "eslint": "^9.39.1"
+  },
+  "dependencies": {
+    "electron-squirrel-startup": "^1.0.1"
+  }
+}
