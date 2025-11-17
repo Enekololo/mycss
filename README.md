@@ -1,11 +1,12 @@
 <!DOCTYPE html>
+<body>
 <html lang="en">
 <head>
     <meta charset="utf-8">
     <title>Voici mon site</title>
     <link rel="stylesheet" href="styles.css">
 </head>
-<body>
+
 
     <link rel="stylesheet" type="text/css" href="styles.css">
 
