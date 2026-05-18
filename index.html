@@ -51,7 +51,17 @@
                 </form>
 
                 <button class="animated-button heartbeat">Heartbeat Button</button>
-                <button class="animated-button border-expand">Border Expand</button>
+                <button class="animated-button border-expand" onclick="myFunction()">Border Expand</button>
+                <script>function myFunction() {
+  alert("I am an alert box!");
+
+if (confirm("Press a button!")) {
+  txt = "You pressed OK!";
+} else {
+  txt = "You pressed Cancel!";
+}
+                }
+</script>
             </div>
         </section>
 
