@@ -12,3 +12,6 @@ Follow these simple steps to get the project up and running on your local machin
 You can download the repository as a ZIP file, or clone it directly using Git:
 ```bash
 git clone https://github.com/Enekololo/mycss
+
+### NEW WEBSITE DEPLOYED
+'https://mycss-eta.vercel.app/'
