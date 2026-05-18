@@ -1,183 +1,322 @@
+/* ==========================================================================
+   1. GLOBAL & BASE STYLES (Typography & Modern Palette)
+   ========================================================================== */
 body {
-    height: 100vh;
     margin: 0;
-    background-color: #a6e3a1;
     min-height: 500vh;
-    font-family: system-ui,sans-serif;
-    overflow-x: hidden
+    background-color: #f8fafc; /* Soft, clean off-white */
+    color: #0f172a;            /* Deep slate for high readability text */
+    font-family: Inter, system-ui, -apple-system, sans-serif;
+    overflow-x: hidden;
+    line-height: 1.5;
 }
 
+h1 {
+    text-align: center;
+    background-color: #e2e8f0; /* Muted slate accent */
+    color: #1e293b;
+    padding: 20px;
+    margin-top: 0;
+    font-size: 2.25rem;
+    font-weight: 800;
+}
+
+h2 {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: #334155;
+    letter-spacing: -0.025em;
+}
+
+p {
+    color: #475569; /* Balanced dark gray for easy reading */
+    font-size: 1rem;
+}
+
+#para_1 {
+    color: #64748b; /* Classy muted variant */
+    font-style: italic;
+}
+
+/* ==========================================================================
+   2. LAYOUT CONTAINERS
+   ========================================================================== */
 .center-container {
     display: flex;
     flex-direction: column;
     align-items: center;
+    gap: 15px;
+    padding: 20px;
 }
+
 .left-container {
     display: flex;
     flex-direction: column;
-    align-items: start;
+    align-items: flex-start;
+    gap: 15px;
+    padding: 20px;
 }
 
+/* ==========================================================================
+   3. BUTTONS & ANIMATIONS (Refined, Modern Colors)
+   ========================================================================== */
 .animated-button {
-    padding: 15px 30px;
-    font-size: 1.2rem;
-    border: none;
-    color: #fff;
-    border-radius: 10px;
-    cursor: pointer;
-    transition: all 0.3s;
     position: relative;
-    overflow: hidden;
     margin: 10px;
+    padding: 14px 28px;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #ffffff;
+    border: none;
+    border-radius: 8px; /* Slightly sleeker radius */
+    cursor: pointer;
+    overflow: hidden;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
 }
 
+/* Rotate Button */
 .rotate {
-    background: #3498db;
+    background: #3b82f6; /* Premium vivid blue */
 }
 
-    .rotate:hover {
-        transform: rotate(360deg);
-    }
+.rotate:hover {
+    transform: rotate(360deg);
+    box-shadow: 0 10px 15px -3px rgba(59, 130, 246, 0.3);
+}
 
+/* Heartbeat Button */
 .heartbeat {
-    background: #ff6b6b;
-    animation: heartbeat 1s infinite;
+    background: #f43f5e; /* Vibrant rose/coral red */
+    animation: heartbeat 1.2s infinite ease-in-out;
 }
 
 @keyframes heartbeat {
-    0% {
-        transform: scale(1);
-    }
-
-    50% {
-        transform: scale(1.1);
-    }
-
-    100% {
-        transform: scale(1);
-    }
+    0% { transform: scale(1); }
+    50% { transform: scale(1.06); }
+    100% { transform: scale(1); }
 }
 
+/* Border Expand Button */
 .border-expand {
-    background: #2980b9;
-    overflow: hidden;
+    background: #6366f1; /* Royal indigo */
 }
 
-    .border-expand::before {
-        content: "";
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        background: transparent;
-        border: 2px solid #fff;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%) scale(0);
-        transition: transform 0.5s, opacity 0.5s;
-    }
+.border-expand::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: 2px solid #ffffff;
+    transform: translate(-50%, -50%) scale(0);
+    opacity: 1;
+    transition: transform 0.4s ease, opacity 0.4s ease;
+}
 
-    .border-expand:hover::before {
-        transform: translate(-50%, -50%) scale(1);
-        opacity: 0;
-    }
-h1 {
+.border-expand:hover::before {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0;
+}
+
+/* Standard Button */
+.button {
+    display: inline-block;
+    padding: 14px 28px;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #ffffff;
+    background-color: #ec4899; /* Sleek magenta/pink */
+    border: none;
+    border-radius: 8px;
     text-align: center;
-    background-color: #b4befe;
-}
-p
-{
-    font-family: 'Comic Sans MS';
-    font-style: italic;
-    color: orange;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
 }
 
-h2 {
-    font-family: Papyrus;
-    font-style: italic;
-    color: #b4befe;
+.button:hover {
+    background-color: #db2777;
 }
 
-#para_1 {
-    font-style: italic;
-    color: #b4befe;
-}
-
+/* ==========================================================================
+   4. BACKGROUND & GLASSMORPHISM
+   ========================================================================== */
 .bg {
     position: absolute;
     inset: 0;
-    z-index: -1
+    z-index: -1;
 }
 
-    .bg img {
-        width: 100%;
-        display: block
-    }
+.bg img {
+    display: block;
+    width: 100%;
+    opacity: 0.15; /* Softened so it doesn't clash with text readability */
+}
 
 .glass {
     position: fixed;
-    inset: 50% auto auto 50%;
-    transform: translate(-50%,-50%);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     width: 20rem;
     height: 20rem;
     border-radius: 50%;
-    background: rgba(255,255,255,.08);
-    border: 2px solid transparent;
-    box-shadow: 0 0 0 2px rgba(255,255,255,.6),0 16px 32px rgba(0,0,0,.12);
-    backdrop-filter: url(#frosted);
-    -webkit-backdrop-filter: url(#frosted);
+    background: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
     display: grid;
     place-items: center;
     cursor: pointer;
     outline: 0;
 }
 
-    .glass::before,
-    .glass::after {
-        content: "";
-        position: absolute;
-        width: 40%;
-        height: 10px;
-        background: #fff;
-        border-radius: 10px;
-    }
-
-    .glass::after {
-        transform: rotate(90deg)
-    }
-
-.button {
-    background-color: #f38ba8;
-    border: none;
-    color: white;
-    padding: 15px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    cursor: pointer;
+.glass::before,
+.glass::after {
+    content: "";
+    position: absolute;
+    width: 35%;
+    height: 6px;
+    background: #ffffff;
+    border-radius: 10px;
 }
+
+.glass::after {
+    transform: rotate(90deg);
+}
+
+/* ==========================================================================
+   5. CONTENT CARDS / DIVS
+   ========================================================================== */
 #div1 {
-    border-radius: 25px;
-    background-color: #73AD21;
-    padding: 20px;
     width: 200px;
     height: 150px;
+    padding: 20px;
+    background-color: #10b981; /* Modern emerald green instead of neon green */
+    color: white;
+    border-radius: 16px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
 }
 
 #div2 {
-    border-radius: 25px;
-    border: 2px solid #73AD21;
-    padding: 20px;
     width: 200px;
     height: 150px;
+    padding: 20px;
+    border: 2px solid #10b981;
+    color: #10b981;
+    border-radius: 16px;
 }
 
 #div3 {
-    border-radius: 25px;
-    background-image: url(paper.gif);
-    background-position: left top;
-    background-repeat: repeat;
-    padding: 20px;
     width: 200px;
     height: 150px;
+    padding: 20px;
+    background-color: #ffffff;
+    background-image: url('paper.gif');
+    background-position: left top;
+    background-repeat: repeat;
+    border: 1px solid #e2e8f0;
+    border-radius: 16px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+}
+
+/* ==========================================================================
+   5. STYLES SPÉCIFIQUES POUR LA PAGE OTHERSIDE
+   ========================================================================== */
+
+/* Groupe de navigation */
+.navigation-group {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+/* Variantes de boutons modernes */
+.secondary-btn {
+    background-color: #64748b !important; /* Gris ardoise élégant */
+}
+.secondary-btn:hover {
+    background-color: #475569 !important;
+}
+
+.accent-btn {
+    background-color: #3b82f6 !important; /* Bleu vif moderne */
+}
+.accent-btn:hover {
+    background-color: #2563eb !important;
+}
+
+/* Carte moderne pour le véhicule */
+.car-card {
+    background: #ffffff;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.05);
+    max-width: 550px;
+    width: 100%;
+    transition: transform 0.3s ease;
+}
+
+.car-card:hover {
+    transform: translateY(-5px);
+}
+
+/* Gestion de l'image de la voiture */
+.image-container {
+    width: 100%;
+    overflow: hidden;
+    background-color: #f1f5f9;
+}
+
+.responsive-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+}
+
+/* Contenu textuel sous l'image */
+.card-content {
+    padding: 25px;
+}
+
+.card-content h1 {
+    text-align: left !important;
+    background: transparent !important;
+    padding: 0 !important;
+    margin: 10px 0 !important;
+    font-size: 1.8rem !important;
+    color: #0f172a !important;
+}
+
+.badge {
+    display: inline-block;
+    background-color: #fee2e2;
+    color: #ef4444;
+    padding: 4px 10px;
+    border-radius: 9999px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.specs {
+    font-weight: 600;
+    color: #059669 !important; /* Vert émeraude pour les spécifications techniques */
+    margin-top: 0;
+    font-size: 0.9rem;
+}
+
+.description {
+    color: #64748b !important;
+    font-family: inherit !important;
+    font-style: normal !important;
+    font-size: 0.95rem;
+    line-height: 1.6;
 }
