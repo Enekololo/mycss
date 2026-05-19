@@ -1,0 +1,16 @@
+# Add 'bug' label to any PR that modifies files in the bugs directory
+bug:
+  - bugs/**
+
+# Add 'documentation' label to any PR that modifies markdown files
+documentation:
+  - '*.md'
+  - docs/**
+
+# Add 'css' label to any PR that modifies CSS files
+css:
+  - '**/*.css'
+
+# Add 'javascript' label to any PR that modifies JS files
+javascript:
+  - '**/*.js'
