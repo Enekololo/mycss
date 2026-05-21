@@ -1,0 +1,220 @@
+/* ========================================================
+   Material 3 Expressive Design Tokens
+   ======================================================== */
+:root {
+    /* Expressive Color Palette (Vibrant, high contrast) */
+    --md-sys-color-primary: #6750A4;
+     --md-sys-color-secondary: #b8b8e9dc;
+    --md-sys-color-on-primary: #FFFFFF;
+    --md-sys-color-background: #FEF7FF;
+    --md-sys-color-on-background: #1D1B20;
+    --md-sys-color-surface: #F3EDF7;
+    --md-sys-color-surface-variant: #E7E0EC;
+
+    /* Expressive Shapes - Extremely rounded corners */
+    --md-sys-shape-corner-extra-large: 28px;
+    --md-sys-shape-corner-small: 4px;
+    --md-sys-shape-corner-medium: 6px;
+    --md-sys-shape-corner-large: 8px;
+    /* Apply theming directly to MD Web Components */
+    --md-filled-button-container-shape: 20px;
+    --md-outlined-button-container-shape: 20px;
+    --md-outlined-text-field-container-shape: 16px;
+    --md-checkbox-container-shape: 6px;
+    --md-ref-typeface-brand: 'Open Sans';
+    --md-ref-typeface-plain: 'Open Sans';
+}
+
+/* ========================================================
+   Base Reset & Layout
+   ======================================================== */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.m3-expressive-body {
+    font-family: 'Google Sans Flex', system-ui, sans-serif;
+    background-color: var(--md-sys-color-background);
+    color: var(--md-sys-color-on-background);
+    line-height: 1.5;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    padding: 2rem;
+}
+
+.container {
+    max-width: 900px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+/* ========================================================
+   Header Controls
+   ======================================================== */
+.expressive-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 2rem;
+    background: var(--md-sys-color-surface-variant);
+    border-radius: var(--md-sys-shape-corner-extra-large);
+}
+
+.toggle-label {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-size: 1.15rem;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.header-actions {
+    display: flex;
+    gap: 0.75rem;
+}
+
+/* ========================================================
+   Comparison Grid & Cards
+   ======================================================== */
+.comparison-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+}
+
+.card {
+    background: var(--md-sys-color-surface);
+    padding: 2.5rem 2rem;
+    border-radius: var(--md-sys-shape-corner-extra-large);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.card h2 {
+    margin-bottom: 2rem;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--md-sys-color-primary);
+    border-bottom: 2px solid var(--md-sys-color-surface-variant);
+    padding-bottom: 0.5rem;
+}
+
+/* ========================================================
+   Standard Browser Form Styling
+   ======================================================== */
+.standard-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.form-group label {
+    font-weight: 500;
+    font-size: 0.95rem;
+}
+
+.form-group input[type="email"] {
+    padding: 0.85rem;
+    border: 1px solid #79747E;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.2s;
+}
+
+.form-group input[type="email"]:focus {
+    outline: none;
+    border-color: var(--md-sys-color-primary);
+}
+
+.checkbox-group {
+    flex-direction: row;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.btn-standard {
+    padding: 0.6rem 1.25rem;
+    border: 1px solid #79747E;
+    background: transparent;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    font-weight: 500;
+    font-family: Google Sans Flex;
+}
+
+.btn-standard.primary {
+    background: #0056b3;
+    color: white;
+    border-color: #0056b3;
+    font-family: Google Sans Flex;
+}
+
+/* ========================================================
+   Material 3 Form Styling
+   ======================================================== */
+.m3-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.75rem; /* Slightly larger gaps for M3 expressive spacing */
+}
+
+.m3-input {
+    width: 100%;
+}
+
+.m3-checkbox-label {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.form-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+.button {
+    border-radius: inherit;
+    cursor: inherit;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    outline: none;
+    --webkit-appearance: none;
+    vertical-align: middle;
+    background: rgba(0, 0, 0, 0);
+    text-decoration: none;
+    min-width: calc(64px - var(--_leading-space) - var(--_trailing-space));
+    width: 100%;
+    z-index: 0;
+    height: 100%;
+    color: var(--_label-text-color);
+    padding: 0;
+    gap: inherit;
+    text-transform: inherit;
+    font-family: Google Sans Flex;
+}
+.md-outlined-button{
+    font-family: Google Sans Flex;
+}
+.square-buttons {
+  /* Changes all <md-filled-button> instances matching the selector */
+  --md-filled-button-container-shape: 0px;
+}

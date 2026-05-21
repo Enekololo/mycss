@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voici mon site</title>
+    <meta name="description" content="Démonstration de structures HTML et d'animations CSS pour l'école.">
+    <link rel="stylesheet" href="css/styles2.css">
+    <link rel="background stylesheet" href="css/background.css">
+</head>
+
+<body>
+<main class="center-container page-layout background">
+
+    <header class="main-header">
+        <h1>Hello World! Ceci est un titre</h1>
+    </header>
+
+    
+        <section class="card left-container">
+            <h2 class="titre_1">Ceci est un sous titre</h2>
+            <p id="para_1">Ceci est un <strong>paragraphe</strong>. t'a compris ?</p>
+            
+            <hr class="divider">
+
+            <div><strong>div</strong> est une balise de type "block"</div>
+            <span><strong>span</strong> est une balise de type "inline"</span>
+            <p>et la balise <strong>p</strong> est un autre balise de type block</p>
+            <a href="https://google.com" target="_blank">et voici un autre balise de type "inline" (Google)</a>
+            
+            <h1 class="block-demo-title">
+                h1 est bien une balise de type "block"
+            </h1>
+            <span>voici un autre span qui est obligé de se placer en bas </span>
+        </section>
+
+        <section class="card left-container">
+            <h3>Formulaires et Liens</h3>
+            <form class="full-width">
+                <p>voici un champ de texte : <input type="text" class="text-input" /></p>
+                <p>voici un checkbox <input type="checkbox" /></p>
+            </form>
+            <a href="src/otherside.html" class="button">cliquez ici pour aller sur mon autre page</a>
+            
+        </section>
+
+        <section class="center-container section-group">
+            <h3>Vos Boutons Animés</h3>
+            <div class="flex-group">
+                <form action="https://github.com/Enekololo/mycss" method="GET">
+                    <button class="animated-button rotate">Rotate Button</button>
+                </form>
+
+                <button class="animated-button heartbeat">Heartbeat Button</button>
+                <button class="animated-button border-expand" onclick="myFunction()">Border Expand</button>
+                <script>function myFunction() {
+  alert("I am an alert box!");
+
+if (confirm("Press a button!")) {
+  txt = "You pressed OK!";
+} else {
+  txt = "You pressed Cancel!";
+}
+                }
+</script>
+            </div>
+        </section>
+
+        <section class="center-container section-group">
+            <h3>Vos Blocs de Couleur (Divs)</h3>
+            <div class="flex-group">
+                <div id="div1">Bloc Rempli (#div1)</div>
+                <div id="div2">Bloc Bordure (#div2)</div>
+                <div id="div3">Bloc Motif (#div3)</div>
+            </div>
+        </section>
+
+    </main>
+
+</body>
+</html>

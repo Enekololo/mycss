@@ -1,4 +1,5 @@
 .background{
 background-image: url("background/toyota.jpg");
-background-size: contain ;
+background-size: cover;
+background-repeat: no-repeat;
 }
