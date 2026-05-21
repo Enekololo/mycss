@@ -1,5 +1,7 @@
 ### NEW WEBSITE DEPLOYED
 'https://mycss-eta.vercel.app/'
+### LEGACY WEBSITE HERE
+'https://mycss-git-v20-enekololos-projects.vercel.app/'
 
 # 🎨 My CSS Project
 
