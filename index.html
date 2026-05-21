@@ -3,78 +3,112 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Voici mon site</title>
+    <title>Voici mon site - Material 3 Expressive</title>
     <meta name="description" content="Démonstration de structures HTML et d'animations CSS pour l'école.">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Google+Sans+Flex:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet" />
+    
     <link rel="stylesheet" href="css/styles2.css">
-    <link rel="background stylesheet" href="css/background.css">
+    
+   <script type="module" src="https://esm.run/@material/web/all.js"></script>
+   <script src="./renderer.js"></script>
+
+
 </head>
-
-<body>
-
-    <header class="main-header">
-        <h1>Hello World! Ceci est un titre</h1>
-    </header>
-
-    <main class="center-container page-layout background">
-
-        <section class="card left-container">
-            <h2 class="titre_1">Ceci est un sous titre</h2>
-            <p id="para_1">Ceci est un <strong>paragraphe</strong>. t'a compris ?</p>
-            
-            <hr class="divider">
-
-            <div><strong>div</strong> est une balise de type "block"</div>
-            <span><strong>span</strong> est une balise de type "inline"</span>
-            <p>et la balise <strong>p</strong> est un autre balise de type block</p>
-            <a href="https://google.com" target="_blank">et voici un autre balise de type "inline" (Google)</a>
-            
-            <h1 class="block-demo-title">
-                h1 est bien une balise de type "block"
+<body class="m3-expressive-app">
+    
+    <div class="app-layout">
+        
+        <aside class="sidebar">
+            <h1 class="app-title">
+                <span class="material-symbols-outlined">auto_awesome</span>
+                Mon Site
             </h1>
-            <span>voici un autre span qui est obligé de se placer en bas </span>
-        </section>
+            
+            <nav class="nav-menu">
+                <md-text-button class="nav-item active">
+                    <span class="material-symbols-outlined" slot="icon">home</span>
+                    Accueil
+                </md-text-button>
+                <md-text-button class="nav-item" onclick="window.location.href='src/otherside.html'">
+                    <span class="material-symbols-outlined" slot="icon">arrow_forward</span>
+                    Autre Page
+                </md-text-button>
+            </nav>
+        </aside>
 
-        <section class="card left-container">
-            <h3>Formulaires et Liens</h3>
-            <form class="full-width">
-                <p>voici un champ de texte : <input type="text" class="text-input" /></p>
-                <p>voici un checkbox <input type="checkbox" /></p>
-            </form>
-            <a href="otherside.html" class="button">cliquez ici pour aller sur mon autre page</a>
-        </section>
+        <main class="main-content">
+            
+            <header class="top-bar">
+                <h2>Hello World! Ceci est un titre</h2>
+                <div class="top-bar-actions" style="display: flex; align-items: center; gap: 1rem;">
+                   <md-outlined-text-field 
+            placeholder="Rechercher..." 
+            type="search" 
+            style="--md-outlined-text-field-container-shape: 24px; min-width: 250px;">
+            <md-icon slot="leading-icon">search</md-icon>
+                    </md-outlined-text-field>
 
-        <section class="center-container section-group">
-            <h3>Vos Boutons Animés</h3>
-            <div class="flex-group">
-                <form action="https://github.com/Enekololo/mycss" method="GET">
-                    <button class="animated-button rotate">Rotate Button</button>
-                </form>
+                </div>
+            </header>
 
-                <button class="animated-button heartbeat">Heartbeat Button</button>
-                <button class="animated-button border-expand" onclick="myFunction()">Border Expand</button>
-                <script>function myFunction() {
-  alert("I am an alert box!");
+            <div class="content-grid">
+                
+                <section class="m3-card hero-card">
+                    <div class="card-content">
+                        <h3>Ceci est un sous titre</h3>
+                        <p id="para_1">Ceci est un <strong>paragraphe</strong>. t'a compris ?</p>
+                        
+                        <hr class="expressive-divider">
 
-if (confirm("Press a button!")) {
-  txt = "You pressed OK!";
-} else {
-  txt = "You pressed Cancel!";
-}
-                }
-</script>
+                        <div class="html-demo-box">
+                            <div><strong>div</strong> est une balise de type "block"</div>
+                            <span><strong>span</strong> est une balise de type "inline"</span>
+                            <p>et la balise <strong>p</strong> est un autre balise de type block</p>
+                            <a href="https://google.com" target="_blank" class="m3-link">et voici un autre balise de type "inline" (Google)</a>
+                            
+                            <h1 class="block-demo-title">h1 est bien une balise de type "block"</h1>
+                            <span>voici un autre span qui est obligé de se placer en bas</span>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="m3-card">
+                    <div class="card-content">
+                        <h3>Formulaires et Liens</h3>
+                        <form class="m3-form">
+                            <md-outlined-text-field label="Champ de texte" type="text" class="full-width"></md-outlined-text-field>
+                            
+                            <label class="m3-checkbox-label">
+                                <md-checkbox></md-checkbox>
+                                Voici un checkbox
+                            </label>
+                        </form>
+                        <div class="card-actions" style="margin-top: 1.5rem;">
+                            <md-filled-button onclick="window.location.href='src/otherside.html'">
+                                Aller sur mon autre page
+                            </md-filled-button>
+                        </div>
+                    </div>
+                </section>
+
+                
+                <section class="m3-card">
+                    <div class="card-content">
+                        <h3>Vos Blocs de Couleur (Divs)</h3>
+                        <div class="color-blocks-group">
+                            <div id="div1" class="color-block filled">Bloc Rempli (#div1)</div>
+                            <div id="div2" class="color-block bordered">Bloc Bordure (#div2)</div>
+                            <div id="div3" class="color-block patterned">Bloc Motif (#div3)</div>
+                        </div>
+                    </div>
+                </section>
+
             </div>
-        </section>
-
-        <section class="center-container section-group">
-            <h3>Vos Blocs de Couleur (Divs)</h3>
-            <div class="flex-group">
-                <div id="div1">Bloc Rempli (#div1)</div>
-                <div id="div2">Bloc Bordure (#div2)</div>
-                <div id="div3">Bloc Motif (#div3)</div>
-            </div>
-        </section>
-
-    </main>
+        </main>
+    </div>
 
 </body>
 </html>
